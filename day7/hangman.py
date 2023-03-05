@@ -266,33 +266,67 @@ HANGMANPICS = ['''
       |
 =========''']
 g = 0
-word = random.choice(wordlist)
-x = len(word)
-chosen_letter = [" _ "]*x
-print(chosen_letter)
-z = 0
-k = 0
-while z < 7 and x != g:
-    lul = 2
-
-    guess = input("Guess a letter: ").lower()
-    i = -1
-    for letter in word:
-        i = i+1
-        if (g == x):
-            break
-        elif (guess == letter):
-            chosen_letter[i] = [guess]
-            lul = 0
-            g += 1
-        elif (i == x-1 and guess != letter and lul != 0):
-            z += 1
-            i = -1
-            print(HANGMANPICS[k])
-            k += 1
-    if (g == x):
-        print("YOU WIN!")
+choice = 1
+while choice != 0:
+    print("Welcome to the game!")
+    print('''                                                                            
+ _                                             
+| |                                            
+| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+| | | | (_| | | | | (_| | | | | | | (_| | | | |
+|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                    __/ |                      
+                   |___/               
+             ''')
+    word = random.choice(wordlist)
+    x = len(word)
+    chosen_letter = [" _ "]*x
     print(chosen_letter)
+    z = 0
+    k = 0
+    while z < 7 and x != g:
+        lul = 2
 
-if (z >= 7):
-    print("YOU LOSE!")
+        guess = input("Guess a letter: ").lower()
+        i = -1
+        for letter in word:
+            i = i+1
+            if (g == x):
+                break
+            elif (guess == letter):
+                chosen_letter[i] = [guess]
+                lul = 0
+                g += 1
+            elif (i == x-1 and guess != letter and lul != 0):
+                z += 1
+                i = -1
+                print(HANGMANPICS[k])
+                k += 1
+        if (g == x):
+            print('''
+    __     __   ____    _    _    __          __  _____   _   _ 
+    \ \   / /  / __ \  | |  | |   \ \        / / |_   _| | \ | |
+     \ \_/ /  | |  | | | |  | |    \ \  /\  / /    | |   |  \| |
+      \   /   | |  | | | |  | |     \ \/  \/ /     | |   | . ` |
+       | |    | |__| | | |__| |      \  /\  /     _| |_  | |\  |
+       |_|     \____/   \____/        \/  \/     |_____| |_| \_|
+                                                                 
+                                                                 
+                  DEMN BRO U GOT REAL BRAINS!
+                  
+                  ''')
+        print(chosen_letter)
+
+    if (z >= 7):
+        print('''
+   __     __   ____    _    _     _         ____     _____   ______ 
+   \ \   / /  / __ \  | |  | |   | |       / __ \   / ____| |  ____|
+    \ \_/ /  | |  | | | |  | |   | |      | |  | | | (___   | |__   
+     \   /   | |  | | | |  | |   | |      | |  | |  \___ \  |  __|  
+      | |    | |__| | | |__| |   | |____  | |__| |  ____) | | |____ 
+      |_|     \____/   \____/    |______|  \____/  |_____/  |______|
+                                                                    
+                                                                    ''')
+        choice = int(
+            input("Press anykey to play again\n press 0 to exit the game :|"))
