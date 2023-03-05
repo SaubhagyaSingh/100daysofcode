@@ -329,4 +329,4 @@ while choice != 0:
                                                                     
                                                                     ''')
         choice = int(
-            input("Press anykey to play again\n press 0 to exit the game :|"))
+            input("Enter any number to play again\n press 0 to exit the game :|"))
