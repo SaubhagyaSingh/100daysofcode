@@ -52,6 +52,7 @@ while choice != 0:
     if (choice == 1):
         data = input("Enter the string: ")
         shift = int(input("Enter the key shift value\n"))
+        shift = shift % 26
         choice2 = int(
             input("Enter 1 to encrypt the data\nEnter 2 to decrypt the data\n"))
         if (choice2 == 1):
