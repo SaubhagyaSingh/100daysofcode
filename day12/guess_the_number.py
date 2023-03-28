@@ -1,4 +1,5 @@
 import random
+
 # Number Guessing Game Objectives:
 
 # Include an ASCII art logo.
@@ -19,7 +20,6 @@ title = '''________  ___  ___  _______   ________   ________           _________
                                  \|_________\|_________|                                                                                                                       \|__|
                                                                                                                                                                                     
                                                                                                                                                                                     '''
-print(title)
 EASY_LEVEL_TURNS = 10
 HARD_LEVEL_TURNS = 5
 
@@ -49,11 +49,11 @@ def set_difficulty():
 
 
 def game():
-    print(logo)
+    print(title)
     # Choosing a random number between 1 and 100.
     print("Welcome to the Number Guessing Game!")
     print("I'm thinking of a number between 1 and 100.")
-    answer = randint(1, 100)
+    answer = random.randint(1, 100)
     print(f"Pssst, the correct answer is {answer}")
 
     turns = set_difficulty()
