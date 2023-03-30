@@ -18,7 +18,7 @@ MENU = {
         },
         "cost": 2.5,
     },
-    "cappuccino": {
+    "capuccino": {
         "ingredients": {
             "water": 250,
             "milk": 100,
@@ -52,28 +52,46 @@ while x != 0:
     choice = input("What would you like to Order?(expresso/latte/capuccino)")
     if choice == "expresso":
         if check_aval("expresso") == 1:
-            resources["water"] -= MENU["expresso"]["ingredients"]["water"]
-            resources["milk"] -= MENU["expresso"]["ingredients"]["milk"]
-            resources["coffee"] -= MENU["expresso"]["ingredients"]["coffee"]
-            print("Enjoy your cup of expresso!")
+            cost = int(input("Enter money here..."))
+            diff = cost-MENU["expresso"]["cost"]
+            if (cost >= MENU["expresso"]["cost"]):
+                print("Enjoy your cup of expresso!")
+                print(f"Here is your change money {diff}")
+                resources["water"] -= MENU["expresso"]["ingredients"]["water"]
+                resources["milk"] -= MENU["expresso"]["ingredients"]["milk"]
+                resources["coffee"] -= MENU["expresso"]["ingredients"]["coffee"]
+
+            else:
+                print("Not Enough Money!")
         else:
             print("Hardluck:(  ...We ran out of resources")
     elif choice == "latte":
-        if check_aval("expresso") == 1:
-            resources["water"] -= MENU["latte"]["ingredients"]["water"]
-            resources["milk"] -= MENU["latte"]["ingredients"]["milk"]
-            resources["coffee"] -= MENU["latte"]["ingredients"]["coffee"]
-            print("Enjoy your cup of latte!")
+        if check_aval("latte") == 1:
+            cost = int(input("Enter money here..."))
+            diff = cost-MENU["latte"]["cost"]
 
+            if (cost >= MENU["latte"]["cost"]):
+                print(f"Here is your change money {diff}")
+                resources["water"] -= MENU["latte"]["ingredients"]["water"]
+                resources["milk"] -= MENU["latte"]["ingredients"]["milk"]
+                resources["coffee"] -= MENU["latte"]["ingredients"]["coffee"]
+                print("Enjoy your cup of latte!")
+            else:
+                print("Not Enough Money!")
         else:
             print("Hardluck:(  ...We ran out of resources")
     elif choice == "capuccino":
-        if check_aval("expresso") == 1:
-            resources["water"] -= MENU["capuccino"]["ingredients"]["water"]
-            resources["milk"] -= MENU["capuccino"]["ingredients"]["milk"]
-            resources["coffee"] -= MENU["capuccino"]["ingredients"]["coffee"]
-            print("Enjoy your cup of capucinno!")
-
+        if check_aval("capuccino") == 1:
+            cost = int(input("Enter money here..."))
+            diff = cost-MENU["capuccino"]["cost"]
+            if (cost >= MENU["capuccino"]["cost"]):
+                print(f"Here is your change money {diff}")
+                resources["water"] -= MENU["capuccino"]["ingredients"]["water"]
+                resources["milk"] -= MENU["capuccino"]["ingredients"]["milk"]
+                resources["coffee"] -= MENU["capuccino"]["ingredients"]["coffee"]
+                print("Enjoy your cup of capuccinno!")
+            else:
+                print("Not Enough Money!")
         else:
             print("Hardluck:(  ...We ran out of resources")
     elif choice == "report":
