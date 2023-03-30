@@ -56,7 +56,7 @@ while x != 0:
             diff = cost-MENU["expresso"]["cost"]
             if (cost >= MENU["expresso"]["cost"]):
                 print("Enjoy your cup of expresso!")
-                print(f"Here is your change money {diff}")
+                print(f"Here is your change money {diff}$")
                 resources["water"] -= MENU["expresso"]["ingredients"]["water"]
                 resources["milk"] -= MENU["expresso"]["ingredients"]["milk"]
                 resources["coffee"] -= MENU["expresso"]["ingredients"]["coffee"]
@@ -71,7 +71,7 @@ while x != 0:
             diff = cost-MENU["latte"]["cost"]
 
             if (cost >= MENU["latte"]["cost"]):
-                print(f"Here is your change money {diff}")
+                print(f"Here is your change money {diff}$")
                 resources["water"] -= MENU["latte"]["ingredients"]["water"]
                 resources["milk"] -= MENU["latte"]["ingredients"]["milk"]
                 resources["coffee"] -= MENU["latte"]["ingredients"]["coffee"]
@@ -85,7 +85,7 @@ while x != 0:
             cost = int(input("Enter money here..."))
             diff = cost-MENU["capuccino"]["cost"]
             if (cost >= MENU["capuccino"]["cost"]):
-                print(f"Here is your change money {diff}")
+                print(f"Here is your change money {diff}$")
                 resources["water"] -= MENU["capuccino"]["ingredients"]["water"]
                 resources["milk"] -= MENU["capuccino"]["ingredients"]["milk"]
                 resources["coffee"] -= MENU["capuccino"]["ingredients"]["coffee"]
