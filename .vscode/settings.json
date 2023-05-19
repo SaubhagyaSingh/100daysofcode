@@ -33,5 +33,9 @@
     "**/.vscode",
     "**/.vscode/**"
   ],
-  "C_Cpp_Runner.useAddressSanitizer": false
+  "C_Cpp_Runner.useAddressSanitizer": false,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.formatting.provider": "none"
 }
