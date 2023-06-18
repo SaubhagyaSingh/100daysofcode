@@ -14,4 +14,4 @@ saubhi.right(360)
 
 
 screen = Screen()
-screen = exitonclick()
+screen.exitonclick()
